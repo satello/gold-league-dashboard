@@ -1,0 +1,16 @@
+.remove-icon span {
+  display: block;
+  height: 15px;
+  width: 15px;
+  line-height: 10px;
+
+  -moz-border-radius: 30px; /* or 50% */
+  border-radius: 30px; /* or 50% */
+
+  background-color: #ff4d4d;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  cursor: pointer;
+  margin-top: 50%;
+}

@@ -1,4 +1,14 @@
 export const COMMODITIES_DETAILS_LOADED = 'commodity.COMMODITIES_DETAILS_LOADED';
-export const UPDATE_COMMODITIES_DETAILS = 'commodity.UPDATE_COMMODITIES_DETAILS';
+export const COMMODITY_DETAILS_LOADED = 'commodity.COMMODITY_DETAILS_LOADED';
+export const UPDATE_COMMODITY_DETAILS = 'commodity.UPDATE_COMMODITY_DETAILS';
+export const SUBMIT_UPDATE_COMMODITY = 'commodity.SUBMIT_UPDATE_COMMODITY';
+export const NEW_METADATA = 'commodity.NEW_METADATA';
 export const COMMODITIES_SAVED = 'commodity.COMMODITIES_SAVED';
 export const LOAD_COMMODITIES = 'commodity.LOAD_COMMODITIES';
+export const LOAD_COMMODITY = 'commodity.LOAD_COMMODITY';
+export const SUBMIT_FORM = 'commodity.SUBMIT_FORM';
+export const SUBMIT_FORM_SUCCESS = 'commodity.SUBMIT_FORM_SUCCESS';
+export const RESET_STORE = 'commodity.RESET_STORE';
+export const COMMODITY_TYPES_LOADED = 'commodity.COMMODITY_TYPES_LOADED';
+export const LOAD_COMMODITY_TYPES = 'commodity.LOAD_COMMODITY_TYPES';
+export const REMOVE_METADATA = 'commodity.REMOVE_METADATA';
