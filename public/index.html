@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Eract is a reactjs admin template build upon bootstrap 4 and uses official create-react-app cli tool. It doesn't use redux or flux so it's easy for begineers to catch it." />
+    <meta name="description" content="This nerdy ass webapp scrapes dfftools and pulls data from the Gold League" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png">
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
@@ -15,13 +15,14 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>Eract - ReactJS Bootstrap 4 Admin Template</title>
+    <title>Gold League Dashboard</title>
 
     <style>
-        #loading-overlay {width: 100%; height: 100%; overflow: hidden; display: flex;  align-items: center; position: fixed; z-index: 99999; background: #2962FF; top: 0; left: 0; bottom: 0; right: 0;}
+        #loading-overlay {width: 100%; height: 100%; overflow: hidden; display: flex;  align-items: center; position: fixed; z-index: 99999; background: black; top: 0; left: 0; bottom: 0; right: 0;}
         .sk-cube-grid{width:44px;height:44px;margin:0px auto; margin-top: -4rem;}.sk-cube-grid .sk-cube{width:33%;height:33%;background-color:#fff;float:left;-webkit-animation:sk-cubeGridScaleDelay 1.3s infinite ease-in-out;animation:sk-cubeGridScaleDelay 1.3s infinite ease-in-out}.sk-cube-grid .sk-cube1{-webkit-animation-delay:.2s;animation-delay:.2s}.sk-cube-grid .sk-cube2{-webkit-animation-delay:.3s;animation-delay:.3s}.sk-cube-grid .sk-cube3{-webkit-animation-delay:.4s;animation-delay:.4s}.sk-cube-grid .sk-cube4{-webkit-animation-delay:.1s;animation-delay:.1s}.sk-cube-grid .sk-cube5{-webkit-animation-delay:.2s;animation-delay:.2s}.sk-cube-grid .sk-cube6{-webkit-animation-delay:.3s;animation-delay:.3s}.sk-cube-grid .sk-cube7{-webkit-animation-delay:0;animation-delay:0}.sk-cube-grid .sk-cube8{-webkit-animation-delay:.1s;animation-delay:.1s}.sk-cube-grid .sk-cube9{-webkit-animation-delay:.2s;animation-delay:.2s}@-webkit-keyframes sk-cubeGridScaleDelay{0%,70%,100%{-webkit-transform:scale3D(1,1,1);transform:scale3D(1,1,1)}35%{-webkit-transform:scale3D(0,0,1);transform:scale3D(0,0,1)}}@keyframes sk-cubeGridScaleDelay{0%,70%,100%{-webkit-transform:scale3D(1,1,1);transform:scale3D(1,1,1)}35%{-webkit-transform:scale3D(0,0,1);transform:scale3D(0,0,1)}}
     </style>
     <link href="https://fonts.googleapis.com/css?family=Muli:400,600,700" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
       <!-- loading indicator -->

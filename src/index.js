@@ -14,7 +14,7 @@ import {Route, IndexRoute, Redirect} from 'react-router';
 import App from './App';
 import Dashboard from './views/dashboard';
 
-// pages
+// old pages
 import Login from './views/pages/login';
 import Register from './views/pages/register';
 import ForgetPass from './views/pages/forget';
@@ -22,6 +22,9 @@ import Page404 from './views/pages/404';
 import Calendar from './views/pages/calendar';
 import Availabilities from './views/pages/availabilities';
 import Commodities, {CommoditiesTable, EditCommodity, NewCommodity} from './views/pages/commodities';
+
+// real pages
+import Rankings from './views/rankings';
 
 
 // import main style dependency file
@@ -126,7 +129,7 @@ class Index {
           <div>
             <Router history={history}>
               <Route component={App} path='/'>
-                  <IndexRoute component={Dashboard}/>
+                  <IndexRoute component={Rankings}/>
                   <Route path="calendar" component={Calendar}/>
                   <Route path="availabilities" component={Availabilities}/>
                   <Route path="commodities" component={Commodities}>

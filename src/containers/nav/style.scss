@@ -36,11 +36,11 @@
 
     .nav-head {
         border-bottom: 2px solid $site-nav-head-border-color;
-        padding: .8rem 1rem;
+        padding: 1.6rem 1rem;
         text-align: center;
         position: relative;
         height: 4.4em;
-        margin-left: -1.5rem;
+        // margin-left: -1.5rem;
     }
     .nav-head svg > path {
         stroke: $site-nav-list-hover-color;

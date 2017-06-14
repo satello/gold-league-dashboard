@@ -9,7 +9,6 @@ import './styles/app.scss';
 class App extends Component {
     constructor(props) {
         super(props);
-        console.log("setting up");
         this.state = {navMini: false};
     }
 
