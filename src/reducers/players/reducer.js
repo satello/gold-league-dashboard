@@ -45,6 +45,8 @@ export function assignWeights(player) {
   // redraft bias weighing
   if (WEIGHTS.redraft > 0) {
     player.value = Math.round((WEIGHTS.redraft * player.redraft_value) + ((1-WEIGHTS.redraft) * player.dynasty_value));
+  } else {
+    player.value = player.dynasty_value
   }
 
   return player;
