@@ -5,21 +5,16 @@ import { startLoading, doneLoading, sendErrorNotification } from '../app/actions
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 /*
-* Load all players
+* Load all owners
 * @params
 * queryParams: <object> {key: value, ...}
 */
-export function loadPlayers(queryParams) {
+export function loadOwners() {
   return (dispatch, getState) => {
     dispatch(startLoading());
-    dispatch(playersLoading());
+    dispatch(ownersLoading());
 
-    let queryString = "";
-    if (queryParams && queryParams.position) {
-      queryString = "?position=" + queryParams.position;
-    }
-
-    fetch(`${API_ENDPOINT}/players${queryString}` , {
+    fetch(`${API_ENDPOINT}/teams` , {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -29,9 +24,9 @@ export function loadPlayers(queryParams) {
     })
     .then(response => {
       return response.json();
-    }).then(players => {
-      if (players.error) throw Error(players.error);
-      dispatch(dispatchLoadPlayers(players));
+    }).then(owners => {
+      if (owners.error) throw Error(owners.error);
+      dispatch(dispatchLoadData(owners));
       dispatch(doneLoading());
     }).catch(error => {
         console.log(error);
@@ -43,34 +38,43 @@ export function loadPlayers(queryParams) {
   }
 }
 
-/*
-* Load all players
-* @params
-* queryParams: <object> {key: value, ...}
-*/
-export function loadFreeAgents(queryParams) {
+export function loadOwnerDetails(name) {
   return (dispatch, getState) => {
     dispatch(startLoading());
-    dispatch(playersLoading());
+    dispatch(ownersLoading());
 
-    let queryString = "";
-    if (queryParams && queryParams.position) {
-      queryString = "?position=" + queryParams.position;
-    }
-
-    fetch(`${API_ENDPOINT}/players/free-agents${queryString}` , {
+    Promise.all([
+      fetch(`${API_ENDPOINT}/teams/${name}` , {
       method: 'GET',
       mode: 'cors',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       }
-    })
-    .then(response => {
-      return response.json();
-    }).then(players => {
-      if (players.error) throw Error(players.error);
-      dispatch(dispatchLoadPlayers(players));
+      })
+      .then(response => {
+        return response.json();
+      }),
+      fetch(`${API_ENDPOINT}/teams/${name}/players` , {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+      })
+      .then(response => {
+        return response.json();
+      })
+    ]).then(ownerDetailsArray => {
+      let flattenedDetails = {};
+      for (var i=0; i < ownerDetailsArray.length; i++) {
+        if (ownerDetailsArray[i].error) {
+          throw Error(ownerDetailsArray[i].error);
+        }
+        Object.assign(flattenedDetails, ownerDetailsArray[i]);
+      }
+      dispatch(dispatchLoadData(flattenedDetails));
       dispatch(doneLoading());
     }).catch(error => {
         console.log(error);
@@ -78,19 +82,19 @@ export function loadFreeAgents(queryParams) {
         'Please try again!' : error.message;
         dispatch(doneLoading());
         dispatch(sendErrorNotification(errMsg));
-    });
+    })
   }
 }
 
-function dispatchLoadPlayers(players) {
+function dispatchLoadData(data) {
   return {
-    type: types.LOAD_PLAYERS,
-    payload: players
+    type: types.LOAD_DATA,
+    payload: data
   }
 }
 
-function playersLoading() {
+function ownersLoading() {
   return {
-    type: types.PLAYERS_LOADING
+    type: types.OWNERS_LOADING
   }
 }

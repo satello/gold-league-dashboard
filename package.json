@@ -29,7 +29,8 @@
     "recharts": "^0.21.2",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "screenfull": "^3.0.2"
+    "screenfull": "^3.0.2",
+    "timsort": "^0.3.0"
   },
   "scripts": {
     "start": "react-scripts start",

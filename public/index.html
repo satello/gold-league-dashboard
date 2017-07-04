@@ -58,5 +58,29 @@
             loading.style.display = 'none';
         }
     </script>
+    <script>
+      // Check browser support
+      if (typeof(Storage) !== "undefined") {
+          // Store
+          if (!localStorage.getItem("weights")) {
+            console.log("resetting weights");
+            localStorage.setItem("weights", JSON.stringify(
+              {
+                "positions": {
+                  "RB": 1,
+                  "WR": 1,
+                  "QB": 1,
+                  "TE": 1,
+                  "PICK": 1
+                },
+                "players": {},
+                "redraft": 0
+              }
+            ));
+          }
+      } else {
+          document.getElementById("root").innerHTML = "Sorry, your browser does not support Web Storage...";
+      }
+    </script>
   </body>
 </html>

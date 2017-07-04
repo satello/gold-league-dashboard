@@ -12,19 +12,13 @@ import {Router, browserHistory} from 'react-router';
 // routes
 import {Route, IndexRoute, Redirect} from 'react-router';
 import App from './App';
-import Dashboard from './views/dashboard';
-
-// old pages
-import Login from './views/pages/login';
-import Register from './views/pages/register';
-import ForgetPass from './views/pages/forget';
-import Page404 from './views/pages/404';
-import Calendar from './views/pages/calendar';
-import Availabilities from './views/pages/availabilities';
-import Commodities, {CommoditiesTable, EditCommodity, NewCommodity} from './views/pages/commodities';
 
 // real pages
 import Rankings from './views/rankings';
+import OwnersPage from './views/owners';
+import Page404 from './views/404';
+import OwnerDetails from './views/owners/details/index.js';
+import Weights from './views/weights';
 
 
 // import main style dependency file
@@ -129,18 +123,12 @@ class Index {
           <div>
             <Router history={history}>
               <Route component={App} path='/'>
-                  <IndexRoute component={Rankings}/>
-                  <Route path="calendar" component={Calendar}/>
-                  <Route path="availabilities" component={Availabilities}/>
-                  <Route path="commodities" component={Commodities}>
-                    <IndexRoute component={CommoditiesTable} />
-                    <Route path="new" component={NewCommodity} />
-                    <Route path=":id" component={EditCommodity} />
-                  </Route>
+                  <IndexRoute component={Rankings} freeAgents={false}/>
+                  <Route path="free-agents" component={Rankings} freeAgents={true} />
+                  <Route path="owners" component={OwnersPage} />
+                  <Route path="owners/:name" component={OwnerDetails} />
+                  <Route path="weights" component={Weights} />
               </Route>
-              <Route component={Login} path="/login" onEnter={this.checkForAuthCode}/>
-              <Route component={Register} path="/register"/>
-              <Route component={ForgetPass} path="/forget"/>
               {/* default */}
               <Route component={Page404} path="404"/>
               <Redirect from="*" to="404"/>

@@ -30,7 +30,7 @@ const GoldLeagueTable = (props) => {
   return (
     <Card className="mb-4 players-wrapper">
       <CardBlock className="table-responsive">
-          <Table id="commodities-table"
+          <Table id={props.tableId ? props.tableId : "commodities-table"}
             className="table"
             data={tableRows}
             sortable={true}

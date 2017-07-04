@@ -22,6 +22,14 @@ class App extends Component {
         this.setState({navMini: false})
     }
     render() {
+        const hasFetch = !!self.fetch;
+        const noobStatus = (
+          <div>
+            <h1>Jabronis Can't Use This App</h1>
+            <p> Seriously though upgrade your browser </p>
+          </div>
+        );
+
         let navMini = this.state.navMini;
         return (
             <div className="app-wrapper">
@@ -30,7 +38,8 @@ class App extends Component {
                     {/* dropshadow for mobile nav triggering */}
                     <div className="menu-dropshadow" style={{display: (navMini ? 'block': 'none')}} onClick={this.hideNav}></div>
                     <SiteHead toggleNav={this.toggleNav}/>
-                    {this.props.children}
+                    {hasFetch && this.props.children}
+                    {!hasFetch && noobStatus}
                 </div>
             </div>
         )

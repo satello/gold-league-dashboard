@@ -11,10 +11,12 @@ const tableHeadings = [
   {id: "rank", displayName: "rank"},
   {id: "name", displayName: "name"},
   {id: "position", displayName: "position"},
+  {id: "bye", displayName: "bye"},
   {id: "value", displayName: "value"},
   {id: "owner", displayName: "owner"},
   {id: "cost", displayName: "cost"},
-  {id: "years", displayName: "years remaining"},
+  {id: "years", displayName: "years"},
+  {id: "redraft_rank", displayName: "redraft rank"},
 ]
 
 /*
