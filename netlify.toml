@@ -1,0 +1,17 @@
+[build.environment]
+  YARN_FLAGS='--pure-lockfile'
+  REACT_APP_ENVIRONMENT = 'production'
+
+[context.production.environment]
+  REACT_APP_ENVIRONMENT = 'production'
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "https://goldleagueff.netlify.com/*"
+  to = "https://goldleagueff.com/:splat"
+  status = 301
+  force = true
