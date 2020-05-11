@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './table.scss';
+import './table.css';
 
 import {
     Card,

@@ -22,7 +22,7 @@ import Weights from './views/weights';
 
 
 // import main style dependency file
-import './styles/index.scss';
+import './styles/index.css';
 
 // Import the reducers
 import * as reducers from './reducers';

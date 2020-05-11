@@ -4,7 +4,7 @@ import React from 'react';
 import IconMenu from 'react-icons/lib/md/menu';
 
 // style
-import './style.scss';
+import './style.css';
 
 
 export default (props) => (

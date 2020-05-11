@@ -19,6 +19,7 @@ export function loadPlayers(queryParams) {
       queryString = "?position=" + queryParams.position;
     }
 
+    console.log(API_ENDPOINT)
     fetch(`${API_ENDPOINT}/players${queryString}` , {
       method: 'GET',
       mode: 'cors',

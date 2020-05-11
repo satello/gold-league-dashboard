@@ -4,7 +4,7 @@ import React from 'react';
 import Table from '../../components/table';
 
 // css
-import './playerTable.scss';
+import './playerTable.css';
 
 
 const tableHeadings = [

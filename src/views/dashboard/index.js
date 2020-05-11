@@ -3,7 +3,7 @@ import ViewHeader from './view-header';
 import ViewContent from './view-content';
 
 // styling
-import './style.scss';
+import './style.css';
 
 
 export default () => (

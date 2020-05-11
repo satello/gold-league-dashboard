@@ -10,7 +10,7 @@ import IconBilling from 'react-icons/lib/md/credit-card';
 import IconSettings from 'react-icons/lib/md/settings-applications';
 import ScrollArea from 'react-scrollbar';
 
-import './style.scss';
+import './style.css';
 
 
 const NavHead = (props) => (

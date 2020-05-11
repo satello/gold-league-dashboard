@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Nav from './containers/nav';
 import SiteHead from './containers/header';
 
-import './styles/app.scss';
+import './styles/app.css';
 
 
 class App extends Component {
